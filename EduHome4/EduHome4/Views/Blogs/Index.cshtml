@@ -1,0 +1,59 @@
+﻿@model List<Blog>
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>blog</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Blog Start -->
+<div class="blog-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            @foreach (Blog blog in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog mb-60">
+                        <div class="blog-img">
+                            <a href="#"><img src="~/img/blog/@blog.Image" alt="blog"></a>
+                            <div class="blog-hover">
+                                <i class="fa fa-link"></i>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-top">
+                                <p>@blog.By /  @blog.CreateTime  /  <i class="fa fa-comments-o"></i> 4</p>
+                             
+                            </div>
+                            <div class="blog-bottom">
+                                <h2>@blog.Tittle</h2>
+                                <a class="default-btn" href="blog-details.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pagination">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->

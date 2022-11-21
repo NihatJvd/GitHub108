@@ -1,0 +1,41 @@
+﻿@model Blog
+<div class="row">
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Blog Create</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label asp-for="Photo" class="form-label"></label>
+                        <input asp-for="Photo" accept="image/*" class="form-control">
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Tittle" class="form-label"></label>
+                        <input asp-for="Tittle" class="form-control">
+                        <span asp-validation-for="Tittle" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="By" class="form-label" for="basic-default-message"></label>
+                        <textarea rows="4" asp-for="By" class="form-control"></textarea>
+                        <span asp-validation-for="By" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="CreateTime" class="form-label" for="basic-default-message"></label>
+                        <textarea rows="4" asp-for="CreateTime" class="form-control"></textarea>
+                        <span asp-validation-for="CreateTime" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success">Create</button>
+                    <a asp-action="Index" class="btn btn-primary">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

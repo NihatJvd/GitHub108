@@ -1,0 +1,41 @@
+﻿
+
+
+@model Blog
+<div class="row">
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Course Detail</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-10">
+                        <label asp-for="Image" class="form-check"></label>
+                        <a><img style="width:200px;height:150px;object-fit:cover" src="~/img/blog/@Model.Image" /></a>
+
+                    </div>
+                    <div class="mb-10">
+                        <label asp-for="Tittle" class="form-check"></label>
+                        <h5>@Html.Raw(@Model.Tittle)</h5>
+
+                    </div>
+                    <div class="mb-10">
+                        <label asp-for="By" class="form-check"></label>
+                        <h5>@Html.Raw(@Model.By)</h5>
+
+                    </div><div class="mb-10">
+                        <label asp-for="CreateTime" class="form-check"></label>
+                        <h5>@Html.Raw(@Model.CreateTime)</h5>
+
+                    </div>
+                    <a asp-action="Index" class="btn btn-primary">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

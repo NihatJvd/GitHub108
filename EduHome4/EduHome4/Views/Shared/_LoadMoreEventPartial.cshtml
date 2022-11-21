@@ -1,0 +1,30 @@
+﻿@model List<Event>
+
+@foreach (Event even in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12" style="width:30%;height:30%;">
+        <div class="single-event mb-60">
+            <div class="event-img" >
+                <a href="event-details.html">
+                    <img   src="~/img/event/@even.Image " alt="event">
+                    <div class="course-hover">
+                        <i class="fa fa-link"></i>
+                    </div>
+                </a>
+                <div class="event-date">
+                    <h3>@Html.Raw(@even.StartTime.ToString("dd MMMM yyyy"))</h3>
+                </div>
+            </div>
+            <div class="event-content text-left">
+                <h4>@Html.Raw(even.Title)</h4>
+                <ul>
+                    <li><span>time:</span>@even.StartTime.ToString("H-mm")  AM - @even.EndTime.ToString("H-mm")  PM</li>
+                    <li><span>venue</span> New Yourk City</li>
+                </ul>
+                <div class="event-content-right">
+                    <a class="default-btn" href="event-details.html">join now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
